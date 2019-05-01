@@ -1,5 +1,4 @@
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/vcalderon2009/DS_Test/master)
-
 [![nbviewer](https://img.shields.io/badge/nbviewer-view%20notebook-red.svg)](https://nbviewer.jupyter.org/github/vcalderon2009/DS_Test/blob/master/notebooks/1.0-Victor_Calderon-DS_Test.ipynb)
 
 
