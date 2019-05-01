@@ -192,22 +192,40 @@ def question_2(df, return_all=False, ntop=10, return_type='dict'):
 
     return return_obj
 
-
-
-
-
-
-
-
-
 ###############################################################################
 
+# Question 3
+# Calculate the average Medicare payments per DRG per facility.
 
+def question_3(df):
+    """
+    This functions determines the average Medicare payments per DRG per
+    facility.
 
+    Parameters
+    ------------
+    df : `pandas.DataFrame`
+        DataFrame containing the original information about DRG.
 
+    Returns
+    --------
+    medicare_pd : `pandas.DataFrame`
+        DataFrame containing information about the average Medicare
+        payments per DRG per facility
+    """
+    # Columns to keep
+    disch_col = 'total_discharges'
+    prov_col  = 'provider_name'
+    drg_col   = 'drg_definition'
+    medi_col  = 'average_medicare_payments'
+    cols_keep = [prov_col, disch_col, drg_col, medi_col]
+    # Creating sub-DataFrame
+    med_main_df = df.loc[:, cols_keep]
+    # Grouping by DRG and facility
+    medicare_pd = (med_main_df.groupby([drg_col, prov_col])
+                    .mean()).drop(disch_col, axis=1)
 
-
-
+    return medicare_pd
 
 ###############################################################################
 
@@ -236,6 +254,7 @@ def main(args):
     # Question 2
     prov_obj = question_2(df, return_type='pd')
     # Question 3
+    medicare_pd = question_3()
     # Question 4
 
 # Main function
