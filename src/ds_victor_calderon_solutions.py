@@ -231,15 +231,6 @@ def question_3(df):
 
 
 
-
-
-
-
-
-
-
-
-
 ###############################################################################
 
 
@@ -254,8 +245,7 @@ def main(args):
     # Question 2
     prov_obj = question_2(df, return_type='pd')
     # Question 3
-    medicare_pd = question_3()
-    # Question 4
+    medicare_pd = question_3(df)
 
 # Main function
 if __name__=='__main__':
